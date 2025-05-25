@@ -34,11 +34,14 @@ class chain:
         try:
             json_parser = JsonOutputParser()
             json_res= json_parser.parse(res.content)
+            # json_res = json.loads(res.content)
         
-        except OutputParserException:
+        except Exception as e:
             raise OutputParserException("Context too big. Unable to parse the jobs.")
+            # raise ValueError(f"Failed to parse JSON: {e}\nResponse was:\n{res.content}")
 
-        return res if isinstance(res,list) else [res]
+        return json_res if isinstance(json_res, list) else [json_res]
+
 
     def write_mail(self, job,links):
         prompt_email = PromptTemplate.from_template(
