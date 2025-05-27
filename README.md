@@ -6,6 +6,7 @@ The Cold Email Generator is an AI-powered tool that helps job seekers craft pers
 1. **Input:** The user enters the URL of the job posting they’re interested in.
 2. **Job Parsing:** Meta’s Llama 3.3-70B model processes the job URL to extract relevant details in structured JSON format.
 3. **Portfolio Matching:** Based on the extracted job description, relevant portfolio links are retrieved from a ChromaDB vector database.
+   
 4.** Email Generation:** The model then generates a personalized cold email, incorporating the matched portfolio links to highlight the user’s qualifications.
 
 ## 🧠 **Under the Hood**
